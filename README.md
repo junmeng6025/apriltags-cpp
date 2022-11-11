@@ -59,10 +59,13 @@ configure the camera parameters according to your own devices
 
 # Install and Build
 ## 1) Clone the repo
- clone this git repo to local  
-and thanks @swatbotics for their awesome work!
+  clone this git repo to local  
+  and thanks @swatbotics for their awesome work!
 ## 2) Modify the `CMakelists.txt` in the `/src` folder:  
-> ATTENTION: don't mix with the CMakeLists.txt in the root folder  
+> This part ALREADY DONE.  
+> Just in case you run into any similar errors and you can fix them referring to the following information.  
+
+**ATTENTION: don't mix with the CMakeLists.txt in the root folder**  
 
 add `target_link_libraries(<main_name> ${OpenCV_LIBS})` for **EVERY** executable's build task.  
 (or for convience you can simply copy the following and substitute all the contents of your original CMakeLists.txt in /src)
