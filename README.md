@@ -122,6 +122,7 @@ make
 ```
 ### Possible issues
 - ### missing some packages
+  install them
 - ### errors like "xxx was not declared in this scope"
   like this:
   ```bash
@@ -132,7 +133,7 @@ make
   491 |     capture->set(CV_CAP_PROP_FRAME_HEIGHT, opts.frame_height);
       |                  ^~~~~~~~~~~~~~~~~~~~~~~~
   ```
-  This is because of the mismatch of different OpenCV versions. The variable names in this project's scripts are not consistent with them of our installed OpenCV library.  
+  This is because of the mismatch of different OpenCV versions. The variable names in this project's scripts are no longer consistent with them of our installed OpenCV library.  
   You can modify them one by one according to the error messages (and that is exactly how I managed to build this ... x_x)  
   Some common substitutions:
   ```cpp
@@ -143,7 +144,9 @@ make
   CV_RGB2GRAY -> cv::COLOR_RGB2GRAY
   ...
   ```
-  You can search them on Google if you don't know the variable name in new OpneCV version 
+  You can search them on Google if you don't know the variable name in new OpneCV version  
+  Theoretically you won't run into errors like this if you use OpenCV 3.4.16, but in case you can refer to these tips.  
+  
 ## Run
 ### tagtest
 ```bash
