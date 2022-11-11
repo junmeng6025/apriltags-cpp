@@ -151,12 +151,20 @@ make
   Theoretically you won't run into errors like this if you use OpenCV 3.4.16, but in case you can refer to these tips.  
   
 ## Run
-### tagtest
+### Demo/Utility programs
+The APRIL tags library is intended to be used as a library, from C++, but there are also five demo/utility programs included in this distribution:  
+- `tagtest`- Demonstrate tag recognition and time profiling.
+  - There are some test images in the `/images` directory, that may be useful to use with the `tagtest` program.
+- `camtest`- Demonstrate 3D tag locations using OpenCV to visualize, with an attached camera.
+- `gltest`- Demonstrate 3D tag locations using OpenGL to visualize, with an attached camera.
+- `quadtest`- Demonstrate/test tag position refinement using a template tracking approach.
+- `maketags`- Create PDF files for printing tags.
+### 1) `tagtest` using local pictures of AprilTags
 ```bash
 # stay in /apriltags-cpp/build
 ./tagtest ../images/iphonecam/IMG_0612.jpg
 ```
-### camtest with our external SONY a7r4
+### 2) `camtest` with our external SONY a7r4
 Setup SONY connection: [SONY a7r4 setup for Ubuntu](sony_ubuntu_setup.md)  
 **Terminal A: connect SONY camera**  
 connect the camera to computer, tur on the camera and setup the correct USB connection options on camera, then:
