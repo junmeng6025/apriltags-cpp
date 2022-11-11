@@ -151,7 +151,7 @@ make
 ./tagtest ../images/iphonecam/IMG_0612.jpg
 ```
 ### camtest with our external SONY a7r4
-Setup SONY connection: https://gitlab.lrz.de/ensnare-tum/ground_cam_setup  
+Setup SONY connection: [SONY a7r4 setup for Ubuntu](sony_ubuntu_setup.md)  
 **Terminal A: connect SONY camera**  
 connect the camera to computer, tur on the camera and setup the correct USB connection options on camera, then:
 ```bash
