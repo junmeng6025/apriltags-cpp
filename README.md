@@ -59,7 +59,7 @@ configure the camera parameters according to your own devices
 
 # Install and Build
 ## 1) Clone the repo
- clone this git repo: https://github.com/swatbotics/apriltags-cpp  
+ clone this git repo to local  
 and thanks @swatbotics for their awesome work!
 ## 2) Modify the `CMakelists.txt` in the `/src` folder:  
 > ATTENTION: don't mix with the CMakeLists.txt in the root folder  
@@ -113,7 +113,7 @@ endif()
 
 ```
 ## 3) Compile the code
-cd to the root folder `/grdcam_apriltag_cpp/apriltags-cpp`
+cd to the root folder `/apriltags-cpp`
 ```bash
 mkdir build
 cd build
@@ -150,7 +150,7 @@ make
 ## Run
 ### tagtest
 ```bash
-# stay in /grdcam_apriltag_cpp/apriltags-cpp/build
+# stay in /apriltags-cpp/build
 ./tagtest ../images/iphonecam/IMG_0612.jpg
 ```
 ### camtest with our external SONY a7r4
@@ -166,7 +166,7 @@ gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p
 ```
 **Terminal B: launch `camtest`**  
 ```bash
-# cd to /grdcam_apriltag_cpp/apriltags-cpp/build
+# cd to /apriltags-cpp/build
 ./camtest
 ```
 You can modify the device id in the source code `/src/camtest.cpp`
@@ -198,7 +198,7 @@ typedef struct CamTestOptions {
 ```
 and then recompile:
 ```bash
-cd grdcam_apriltag_cpp/apriltags-cpp/build
+cd apriltags-cpp/build
 make
 ```
 The result of cam test:  
