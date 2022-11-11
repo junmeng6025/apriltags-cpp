@@ -165,7 +165,8 @@ The APRIL tags library is intended to be used as a library, from C++, but there 
 # stay in /apriltags-cpp/build
 ./tagtest ../images/iphonecam/IMG_0612.jpg
 ```
-***
+<br/>  
+
 ### 2) `camtest` with our external SONY a7r4
 Setup SONY connection: [SONY a7r4 setup for Ubuntu](sony_ubuntu_setup.md)  
 <br/>  
