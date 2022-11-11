@@ -159,13 +159,17 @@ The APRIL tags library is intended to be used as a library, from C++, but there 
 - `gltest`- Demonstrate 3D tag locations using OpenGL to visualize, with an attached camera.
 - `quadtest`- Demonstrate/test tag position refinement using a template tracking approach.
 - `maketags`- Create PDF files for printing tags.
+***
 ### 1) `tagtest` using local pictures of AprilTags
 ```bash
 # stay in /apriltags-cpp/build
 ./tagtest ../images/iphonecam/IMG_0612.jpg
 ```
+***
 ### 2) `camtest` with our external SONY a7r4
 Setup SONY connection: [SONY a7r4 setup for Ubuntu](sony_ubuntu_setup.md)  
+<br/>  
+
 **Terminal A: connect SONY camera**  
 connect the camera to computer, tur on the camera and setup the correct USB connection options on camera, then:
 ```bash
