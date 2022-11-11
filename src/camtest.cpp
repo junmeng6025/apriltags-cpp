@@ -26,7 +26,8 @@ typedef struct CamTestOptions {
       params(),
       family_str(DEFAULT_TAG_FAMILY),
       error_fraction(1),
-      device_num(0),
+      //device_num(0),  // 0 is the built-in webcam
+      device_num(2),  // here 2 is our external SONY a7r4
       focal_length(500),
       tag_size(0.1905),
       frame_width(0),
@@ -158,8 +159,8 @@ int main(int argc, char** argv) {
   }
 
   std::cout << "Set camera to resolution: "
-            << vc.get(CV_CAP_PROP_FRAME_WIDTH) << "x"
-            << vc.get(CV_CAP_PROP_FRAME_HEIGHT) << "\n";
+            << vc.get(cv::CAP_PROP_FRAME_WIDTH) << "x"
+            << vc.get(cv::CAP_PROP_FRAME_HEIGHT) << "\n";
 
   cv::Mat frame;
   cv::Point2d opticalCenter;
@@ -288,7 +289,7 @@ int main(int argc, char** argv) {
                      dstmat(edges[j][0],0),
                      dstmat(edges[j][1],0),
                      cvPose ? CV_RGB(0,255,0) : CV_RGB(255,0,0),
-                     1, CV_AA);
+                     1, LINE_AA);
           }
 
         }
