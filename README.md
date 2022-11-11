@@ -169,10 +169,8 @@ The APRIL tags library is intended to be used as a library, from C++, but there 
 
 ### 2) `camtest` with our external SONY a7r4
 Setup SONY connection: [SONY a7r4 setup for Ubuntu](sony_ubuntu_setup.md)  
-<br/>  
-
 - **Terminal A: connect SONY camera**  
-  connect the camera to computer, tur on the camera and setup the correct USB connection options on camera, then:
+  connect the camera to computer, turn on the camera and setup the correct USB connection options on camera, then:
   ```bash
   cd /path/to/v4l2loopback
   sudo modprobe v4l2loopback
