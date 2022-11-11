@@ -62,7 +62,7 @@ configure the camera parameters according to your own devices
   clone this git repo to local  
   and thanks @swatbotics for their awesome work!
 ## 2) Modify the `CMakelists.txt` in the `/src` folder:  
-> This part ALREADY DONE.  
+> This part IS ALREADY DONE.  
 > Just in case you run into any similar errors and you can fix them referring to the following information.  
 
 **ATTENTION: don't mix with the CMakeLists.txt in the root folder**  
