@@ -171,53 +171,53 @@ The APRIL tags library is intended to be used as a library, from C++, but there 
 Setup SONY connection: [SONY a7r4 setup for Ubuntu](sony_ubuntu_setup.md)  
 <br/>  
 
-**Terminal A: connect SONY camera**  
-connect the camera to computer, tur on the camera and setup the correct USB connection options on camera, then:
-```bash
-cd /path/to/v4l2loopback
-sudo modprobe v4l2loopback
-ls -1 /sys/devices/virtual/video4linux # check lookback devices, make sure "video2" in returned message
-sudo modprobe v4l2loopback exclusive_caps=1 max_buffers=2
-gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 8 -f v4l2 /dev/video2
-```
-**Terminal B: launch `camtest`**  
-```bash
-# cd to /apriltags-cpp/build
-./camtest
-```
-You can modify the device id in the source code `/src/camtest.cpp`
-```cpp
-typedef struct CamTestOptions {
-  CamTestOptions() :
-      params(),
-      family_str(DEFAULT_TAG_FAMILY),
-      error_fraction(1),
-      //device_num(0),  // 0 is the laptop's built-in webcam
-      device_num(2),  // here 2 is our external SONY a7r4
-      focal_length(500),
-      tag_size(0.1905),
-      frame_width(0),
-      frame_height(0),
-      mirror_display(true)
-  {
-  }
-  TagDetectorParams params;
-  std::string family_str;
-  double error_fraction;
-  int device_num;
-  double focal_length;
-  double tag_size;
-  int frame_width;
-  int frame_height;
-  bool mirror_display;
-} CamTestOptions;
-```
-and then recompile:
-```bash
-cd apriltags-cpp/build
-make
-```
-The result of cam test:  
-<img src=README/sony-apriltag2.png>  
-<img src=README/sony-apriltag4.png>  
+- **Terminal A: connect SONY camera**  
+  connect the camera to computer, tur on the camera and setup the correct USB connection options on camera, then:
+  ```bash
+  cd /path/to/v4l2loopback
+  sudo modprobe v4l2loopback
+  ls -1 /sys/devices/virtual/video4linux # check lookback devices, make sure "video2" in returned message
+  sudo modprobe v4l2loopback exclusive_caps=1 max_buffers=2
+  gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 8 -f v4l2 /dev/video2
+  ```
+- **Terminal B: launch `camtest`**  
+  ```bash
+  # cd to /apriltags-cpp/build
+  ./camtest
+  ```
+  You can modify the device id in the source code `/src/camtest.cpp`
+  ```cpp
+  typedef struct CamTestOptions {
+    CamTestOptions() :
+        params(),
+        family_str(DEFAULT_TAG_FAMILY),
+        error_fraction(1),
+        //device_num(0),  // 0 is the laptop's built-in webcam
+        device_num(2),  // here 2 is our external SONY a7r4
+        focal_length(500),
+        tag_size(0.1905),
+        frame_width(0),
+        frame_height(0),
+        mirror_display(true)
+    {
+    }
+    TagDetectorParams params;
+    std::string family_str;
+    double error_fraction;
+    int device_num;
+    double focal_length;
+    double tag_size;
+    int frame_width;
+    int frame_height;
+    bool mirror_display;
+  } CamTestOptions;
+  ```
+  and then recompile:
+  ```bash
+  cd apriltags-cpp/build
+  make
+  ```
+  The result of cam test:  
+  <img src=README/sony-apriltag2.png>  
+  <img src=README/sony-apriltag4.png>  
 
