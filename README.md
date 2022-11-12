@@ -14,7 +14,7 @@ configure the camera parameters according to your own devices
 - after all the percedures, check your opencv version with this command:  
 
   ```bash
-  pkg-config --cflags opencv
+  pkg-config --modversion opencv
   ```
   it should return the version number `3.4.16`.  
   **IF NOT**:  
@@ -49,7 +49,7 @@ configure the camera parameters according to your own devices
     Libs.private: -ldl -lm -lpthread -lrt
     Cflags: -I${includedir_old} -I${includedir_new}
     ```
-  - check again using command `pkg-config --cflags opencv`
+  - check again using command `pkg-config --modversion opencv`
 - Now you should have finished with the installation and setup for OpenCV!
 ### canberra-gtk-module
   ```bash
